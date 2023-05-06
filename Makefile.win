@@ -1,0 +1,32 @@
+# Project: Nyan Snake 2.0
+# Makefile created by Red Panda C++ 1.0.6
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Nyan\ Snake\ 2.0.o method.o
+LINKOBJ  = "Nyan Snake 2.0.o" method.o
+CLEANOBJ  =  "Nyan Snake 2.0.o" method.o "Nyan Snake 2.0.exe"
+LIBS     =  -static
+INCS     =  
+CXXINCS  =  
+BIN      = "Nyan Snake 2.0.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = del /q /f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(CLEANOBJ) > NUL 2>&1
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Nyan\ Snake\ 2.0.o: Nyan\ Snake\ 2.0.c method.h
+	$(CC) -c "D:/Code/Nyan Snake 2.1/Nyan Snake 2.0.c" -o "Nyan Snake 2.0.o" $(CFLAGS)  -finput-charset=UTF-8 BOM -fexec-charset=gbk
+
+method.o: method.c method.h
+	$(CC) -c "D:/Code/Nyan Snake 2.1/method.c" -o method.o $(CFLAGS) 
